@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get to know LUXE Hair Studio and our approach to hair care.">
+  <title>About Us | LUXE Hair Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F8F5F0",
+            ink: "#252421",
+            muted: "#6F6B65",
+            gold: "#B38A54",
+            sand: "#EAE1D5"
+          },
+          fontFamily: {
+            display: ["Georgia", "serif"],
+            body: ["Arial", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream font-body text-ink">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-sand bg-cream/95">
+    <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-5 py-4 md:px-10">
+      <a href="index.html" class="font-display text-2xl font-bold tracking-[0.15em]">
+        LUXE<span class="text-gold">.</span>
+      </a>
+
+      <button id="menuButton"
+              class="rounded border border-sand px-3 py-2 md:hidden"
+              aria-label="Toggle menu"
+              aria-expanded="false">☰</button>
+
+      <div id="menu"
+           class="hidden w-full flex-col gap-5 pt-5 text-sm font-semibold uppercase tracking-widest md:flex md:w-auto md:flex-row md:items-center md:gap-8 md:pt-0">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="hover:text-gold">Services</a>
+        <a href="booking.html" class="hover:text-gold">Booking & Contact</a>
+        <a href="about.html" class="text-gold">About</a>
+        <a href="booking.html"
+           class="rounded bg-ink px-5 py-3 text-center text-white hover:bg-gold">
+          Book Now
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page heading -->
+    <section class="bg-ink px-6 py-20 text-center text-white md:px-10">
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+        About LUXE
+      </p>
+      <h1 class="mt-4 font-display text-5xl md:text-6xl">
+        More than a haircut.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl leading-8 text-gray-300">
+        A welcoming studio where good conversations, thoughtful service
+        and great hair come together.
+      </p>
+    </section>
+
+    <!-- Our story -->
+    <section class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-20 md:px-10 lg:grid-cols-2">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          Our story
+        </p>
+        <h2 class="mt-3 font-display text-4xl leading-tight">
+          A space to feel at home.
+        </h2>
+        <p class="mt-6 leading-8 text-muted">
+          LUXE Hair Studio was imagined as a place where everyone can
+          feel comfortable exploring their personal style. We believe a
+          great appointment starts with listening. Before the first cut
+          or colour, we take time to understand what you want and how
+          you like to wear your hair.
+        </p>
+        <p class="mt-5 leading-8 text-muted">
+          Whether you have a clear idea or need some guidance, our goal
+          is to make each visit relaxed, collaborative and enjoyable.
+          We want you to leave with a look that fits your life.
+        </p>
+      </div>
+
+      <img
+        src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1200&q=85"
+        alt="Welcoming contemporary salon space"
+        class="h-[420px] w-full rounded object-cover"
+      >
+    </section>
+
+    <!-- Mission and values -->
+    <section class="bg-white px-6 py-20 md:px-10">
+      <div class="mx-auto max-w-7xl">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          What guides us
+        </p>
+        <h2 class="mt-3 font-display text-4xl">Our mission & values</h2>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <article class="rounded bg-cream p-8">
+            <span class="font-display text-4xl text-gold">01</span>
+            <h3 class="mt-4 font-display text-2xl">Listen</h3>
+            <p class="mt-4 leading-7 text-muted">
+              Your ideas and preferences shape the service we provide.
+            </p>
+          </article>
+
+          <article class="rounded bg-cream p-8">
+            <span class="font-display text-4xl text-gold">02</span>
+            <h3 class="mt-4 font-display text-2xl">Create</h3>
+            <p class="mt-4 leading-7 text-muted">
+              We combine creativity and care to create a style that
+              feels right for you.
+            </p>
+          </article>
+
+          <article class="rounded bg-cream p-8">
+            <span class="font-display text-4xl text-gold">03</span>
+            <h3 class="mt-4 font-display text-2xl">Welcome</h3>
+            <p class="mt-4 leading-7 text-muted">
+              We aim to make every client feel at ease from the moment
+              they arrive.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team -->
+    <section class="mx-auto max-w-7xl px-6 py-20 md:px-10">
+      <div class="text-center">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          Meet the team
+        </p>
+        <h2 class="mt-3 font-display text-4xl">
+          Your stylists
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl leading-7 text-muted">
+          Friendly people who enjoy helping you find the look that works
+          for you.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <article class="rounded bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-sand font-display text-4xl text-gold">
+            A
+          </div>
+          <h3 class="mt-5 font-display text-2xl">Alex</h3>
+          <p class="mt-2 font-semibold text-gold">Cuts & styling</p>
+          <p class="mt-4 leading-7 text-muted">
+            Alex enjoys creating easy-to-wear styles tailored to each client.
+          </p>
+        </article>
+
+        <article class="rounded bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-sand font-display text-4xl text-gold">
+            J
+          </div>
+          <h3 class="mt-5 font-display text-2xl">Jamie</h3>
+          <p class="mt-2 font-semibold text-gold">Colour</p>
+          <p class="mt-4 leading-7 text-muted">
+            Jamie loves working with clients to plan a colour that suits them.
+          </p>
+        </article>
+
+        <article class="rounded bg-white p-8 text-center shadow-sm">
+          <div class="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-sand font-display text-4xl text-gold">
+            T
+          </div>
+          <h3 class="mt-5 font-display text-2xl">Taylor</h3>
+          <p class="mt-2 font-semibold text-gold">Hair care & styling</p>
+          <p class="mt-4 leading-7 text-muted">
+            Taylor focuses on thoughtful care and finishing details.
+          </p>
+        </article>
+      </div>
+
+      <p class="mt-6 text-center text-sm text-muted">
+        Team names and profiles are examples for this student website prototype.
+      </p>
+    </section>
+
+    <!-- Call to action -->
+    <section class="bg-sand px-6 py-20 text-center md:px-10">
+      <h2 class="font-display text-4xl">Come experience LUXE.</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-7 text-muted">
+        Explore our services or choose a time for your next appointment.
+      </p>
+      <a href="booking.html"
+         class="mt-8 inline-block rounded bg-ink px-8 py-4 font-semibold text-white hover:bg-gold">
+        Book an Appointment
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink px-6 py-10 text-gray-300 md:px-10">
+    <div class="mx-auto flex max-w-7xl flex-wrap justify-between gap-8">
+      <div>
+        <p class="font-display text-2xl font-bold tracking-widest text-white">
+          LUXE<span class="text-gold">.</span>
+        </p>
+        <p class="mt-3">Hair that feels like you.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="hover:text-gold">Services</a>
+        <a href="booking.html" class="hover:text-gold">Booking & Contact</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+      </div>
+    </div>
+
+    <p class="mx-auto mt-8 max-w-7xl border-t border-gray-700 pt-5 text-sm">
+      © 2026 LUXE Hair Studio. Student website prototype.
+    </p>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+  </script>
+</body>
+</html>

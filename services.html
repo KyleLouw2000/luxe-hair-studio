@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore haircuts, colour and styling services at LUXE Hair Studio.">
+  <title>Services | LUXE Hair Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F8F5F0",
+            ink: "#252421",
+            muted: "#6F6B65",
+            gold: "#B38A54",
+            sand: "#EAE1D5"
+          },
+          fontFamily: {
+            display: ["Georgia", "serif"],
+            body: ["Arial", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream font-body text-ink">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-sand bg-cream/95">
+    <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-5 py-4 md:px-10">
+      <a href="index.html" class="font-display text-2xl font-bold tracking-[0.15em]">
+        LUXE<span class="text-gold">.</span>
+      </a>
+
+      <button id="menuButton"
+              class="rounded border border-sand px-3 py-2 md:hidden"
+              aria-label="Toggle menu"
+              aria-expanded="false">
+        ☰
+      </button>
+
+      <div id="menu"
+           class="hidden w-full flex-col gap-5 pt-5 text-sm font-semibold uppercase tracking-widest md:flex md:w-auto md:flex-row md:items-center md:gap-8 md:pt-0">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="text-gold">Services</a>
+        <a href="booking.html" class="hover:text-gold">Booking & Contact</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="booking.html"
+           class="rounded bg-ink px-5 py-3 text-center text-white hover:bg-gold">
+          Book Now
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page heading -->
+    <section class="bg-ink px-6 py-20 text-center text-white md:px-10">
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+        Our services
+      </p>
+      <h1 class="mt-4 font-display text-5xl md:text-6xl">
+        Your hair, your way.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl leading-8 text-gray-300">
+        From a simple refresh to a completely new look, choose the service
+        that suits you. Our team will help you feel comfortable from the
+        first consultation to the finishing touch.
+      </p>
+    </section>
+
+    <!-- Service cards -->
+    <section class="mx-auto max-w-7xl px-6 py-20 md:px-10">
+      <div class="mb-10">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          Explore the menu
+        </p>
+        <h2 class="mt-3 font-display text-4xl">Salon services</h2>
+        <p class="mt-4 text-muted">
+          Starting prices are shown below. Final pricing may vary by hair
+          length and the service discussed during your appointment.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Service 1 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Cut
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Cut & Finish</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            A consultation, wash, tailored haircut and finished style
+            that fits your everyday routine.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R280</p>
+          <p class="mt-1 text-sm text-muted">Approximately 60 minutes</p>
+          <a href="booking.html?service=Cut%20%26%20Finish"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Cut
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Express Trim</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            A quick tidy-up to maintain the shape and feel of your
+            current haircut.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R180</p>
+          <p class="mt-1 text-sm text-muted">Approximately 30 minutes</p>
+          <a href="booking.html?service=Express%20Trim"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Colour
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Colour Refresh</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            Refresh your existing colour or explore a new shade with
+            guidance from your stylist.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R650</p>
+          <p class="mt-1 text-sm text-muted">Approximately 120 minutes</p>
+          <a href="booking.html?service=Colour%20Refresh"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Colour
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Highlights</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            Add dimension and brightness with highlights planned
+            around the look you want.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R850</p>
+          <p class="mt-1 text-sm text-muted">Approximately 150 minutes</p>
+          <a href="booking.html?service=Highlights"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+
+        <!-- Service 5 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Styling
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Wash & Style</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            Enjoy a refreshing wash and a finished style for an
+            everyday boost or an upcoming event.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R250</p>
+          <p class="mt-1 text-sm text-muted">Approximately 45 minutes</p>
+          <a href="booking.html?service=Wash%20%26%20Style"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+
+        <!-- Service 6 -->
+        <article class="flex flex-col rounded bg-white p-7 shadow-sm">
+          <span class="text-sm font-bold uppercase tracking-widest text-gold">
+            Care
+          </span>
+          <h3 class="mt-3 font-display text-2xl">Hair Treatment</h3>
+          <p class="mt-4 flex-1 leading-7 text-muted">
+            Give your hair extra care with a treatment selected
+            according to its needs.
+          </p>
+          <p class="mt-6 text-xl font-bold">From R320</p>
+          <p class="mt-1 text-sm text-muted">Approximately 45 minutes</p>
+          <a href="booking.html?service=Hair%20Treatment"
+             class="mt-6 rounded bg-ink px-5 py-3 text-center font-semibold text-white transition hover:bg-gold">
+            Book Now
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Booking call to action -->
+    <section class="bg-sand px-6 py-20 text-center md:px-10">
+      <h2 class="font-display text-4xl">Found your next service?</h2>
+      <p class="mx-auto mt-4 max-w-xl leading-7 text-muted">
+        Choose a time and send through your appointment request.
+      </p>
+      <a href="booking.html"
+         class="mt-8 inline-block rounded bg-ink px-8 py-4 font-semibold text-white hover:bg-gold">
+        Book an Appointment
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink px-6 py-10 text-gray-300 md:px-10">
+    <div class="mx-auto flex max-w-7xl flex-wrap justify-between gap-8">
+      <div>
+        <p class="font-display text-2xl font-bold tracking-widest text-white">
+          LUXE<span class="text-gold">.</span>
+        </p>
+        <p class="mt-3">Hair that feels like you.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="hover:text-gold">Services</a>
+        <a href="booking.html" class="hover:text-gold">Booking & Contact</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+      </div>
+    </div>
+
+    <p class="mx-auto mt-8 max-w-7xl border-t border-gray-700 pt-5 text-sm">
+      © 2026 LUXE Hair Studio. Student website prototype.
+    </p>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+  </script>
+</body>
+</html>

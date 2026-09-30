@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request an appointment at LUXE Hair Studio.">
+  <title>Booking & Contact | LUXE Hair Studio</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: "#F8F5F0",
+            ink: "#252421",
+            muted: "#6F6B65",
+            gold: "#B38A54",
+            sand: "#EAE1D5"
+          },
+          fontFamily: {
+            display: ["Georgia", "serif"],
+            body: ["Arial", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-cream font-body text-ink">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-sand bg-cream/95">
+    <nav class="mx-auto flex max-w-7xl flex-wrap items-center justify-between px-5 py-4 md:px-10">
+      <a href="index.html" class="font-display text-2xl font-bold tracking-[0.15em]">
+        LUXE<span class="text-gold">.</span>
+      </a>
+
+      <button id="menuButton"
+              class="rounded border border-sand px-3 py-2 md:hidden"
+              aria-label="Toggle menu"
+              aria-expanded="false">☰</button>
+
+      <div id="menu"
+           class="hidden w-full flex-col gap-5 pt-5 text-sm font-semibold uppercase tracking-widest md:flex md:w-auto md:flex-row md:items-center md:gap-8 md:pt-0">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="hover:text-gold">Services</a>
+        <a href="booking.html" class="text-gold">Booking & Contact</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+        <a href="booking.html"
+           class="rounded bg-ink px-5 py-3 text-center text-white hover:bg-gold">
+          Book Now
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page heading -->
+    <section class="bg-ink px-6 py-20 text-center text-white md:px-10">
+      <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+        Make time for you
+      </p>
+      <h1 class="mt-4 font-display text-5xl md:text-6xl">
+        Book an appointment.
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl leading-8 text-gray-300">
+        Choose your service and preferred time below. This student prototype
+        saves appointments in this browser for demonstration.
+      </p>
+    </section>
+
+    <section class="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:px-10 lg:grid-cols-[2fr_1fr]">
+      <!-- Booking form -->
+      <div class="rounded bg-white p-6 shadow-sm sm:p-10">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          Appointment details
+        </p>
+        <h2 id="formHeading" class="mt-3 font-display text-3xl">
+          Request your booking
+        </h2>
+        <p class="mt-3 text-muted">
+          Fields marked * are required.
+        </p>
+
+        <form id="bookingForm" class="mt-8 space-y-5">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="fullName" class="mb-2 block font-semibold">Full name *</label>
+              <input id="fullName" name="fullName" type="text" required maxlength="80"
+                     autocomplete="name"
+                     class="w-full rounded border border-sand p-3 outline-none focus:border-gold"
+                     placeholder="Your full name">
+            </div>
+            <div>
+              <label for="email" class="mb-2 block font-semibold">Email *</label>
+              <input id="email" name="email" type="email" required maxlength="120"
+                     autocomplete="email"
+                     class="w-full rounded border border-sand p-3 outline-none focus:border-gold"
+                     placeholder="you@example.com">
+            </div>
+          </div>
+
+          <div>
+            <label for="phone" class="mb-2 block font-semibold">Phone number *</label>
+            <input id="phone" name="phone" type="tel" required maxlength="25"
+                   autocomplete="tel"
+                   class="w-full rounded border border-sand p-3 outline-none focus:border-gold"
+                   placeholder="Your contact number">
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="service" class="mb-2 block font-semibold">Service *</label>
+              <select id="service" name="service" required
+                      class="w-full rounded border border-sand bg-white p-3 outline-none focus:border-gold">
+                <option value="">Choose a service</option>
+                <option>Cut & Finish</option>
+                <option>Express Trim</option>
+                <option>Colour Refresh</option>
+                <option>Highlights</option>
+                <option>Wash & Style</option>
+                <option>Hair Treatment</option>
+              </select>
+            </div>
+            <div>
+              <label for="stylist" class="mb-2 block font-semibold">Preferred stylist</label>
+              <select id="stylist" name="stylist"
+                      class="w-full rounded border border-sand bg-white p-3 outline-none focus:border-gold">
+                <option>No preference</option>
+                <option>Alex</option>
+                <option>Jamie</option>
+                <option>Taylor</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="date" class="mb-2 block font-semibold">Preferred date *</label>
+              <input id="date" name="date" type="date" required
+                     class="w-full rounded border border-sand p-3 outline-none focus:border-gold">
+            </div>
+            <div>
+              <label for="time" class="mb-2 block font-semibold">Preferred time *</label>
+              <select id="time" name="time" required
+                      class="w-full rounded border border-sand bg-white p-3 outline-none focus:border-gold">
+                <option value="">Choose a time</option>
+                <option>09:00</option>
+                <option>10:00</option>
+                <option>11:00</option>
+                <option>12:00</option>
+                <option>13:00</option>
+                <option>14:00</option>
+                <option>15:00</option>
+                <option>16:00</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="notes" class="mb-2 block font-semibold">Notes</label>
+            <textarea id="notes" name="notes" rows="4" maxlength="500"
+                      class="w-full rounded border border-sand p-3 outline-none focus:border-gold"
+                      placeholder="Tell us anything helpful about your appointment"></textarea>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <button id="submitButton" type="submit"
+                    class="rounded bg-ink px-7 py-4 font-semibold text-white transition hover:bg-gold">
+              Save Appointment
+            </button>
+            <button id="cancelEditButton" type="button"
+                    class="hidden rounded border border-ink px-7 py-4 font-semibold hover:bg-sand">
+              Stop Editing
+            </button>
+          </div>
+
+          <p id="formMessage" role="status" aria-live="polite"
+             class="hidden rounded bg-sand p-4 font-semibold"></p>
+        </form>
+      </div>
+
+      <!-- Contact details -->
+      <aside>
+        <div class="rounded bg-sand p-8">
+          <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+            Get in touch
+          </p>
+          <h2 class="mt-3 font-display text-3xl">Visit LUXE</h2>
+
+          <div class="mt-8 space-y-6 leading-7">
+            <div>
+              <h3 class="font-bold">Location</h3>
+              <p class="text-muted">Cape Town, South Africa</p>
+              <p class="text-sm text-muted">Example location for this student project.</p>
+            </div>
+            <div>
+              <h3 class="font-bold">Opening hours</h3>
+              <p class="text-muted">Monday–Friday: 09:00–17:00</p>
+              <p class="text-muted">Saturday: 09:00–15:00</p>
+              <p class="text-muted">Sunday: Closed</p>
+            </div>
+            <div>
+              <h3 class="font-bold">Questions?</h3>
+              <p class="text-muted">
+                Use the appointment notes to tell us what you need.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 rounded border border-sand p-6 text-sm leading-7 text-muted">
+          <strong class="text-ink">Prototype note:</strong>
+          Appointments entered here are stored only in your browser.
+          They are not sent to a salon or WordPress database.
+        </div>
+      </aside>
+    </section>
+
+    <!-- Saved bookings -->
+    <section class="mx-auto max-w-7xl px-6 pb-20 md:px-10">
+      <div class="border-t border-sand pt-12">
+        <p class="text-sm font-bold uppercase tracking-[0.3em] text-gold">
+          Booking demonstration
+        </p>
+        <h2 class="mt-3 font-display text-4xl">Saved appointments</h2>
+        <p class="mt-4 text-muted">
+          Your bookings appear here. You can edit or cancel them to demonstrate
+          the prototype's booking functions.
+        </p>
+        <div id="bookingList" class="mt-8 grid gap-5 md:grid-cols-2"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink px-6 py-10 text-gray-300 md:px-10">
+    <div class="mx-auto flex max-w-7xl flex-wrap justify-between gap-8">
+      <div>
+        <p class="font-display text-2xl font-bold tracking-widest text-white">
+          LUXE<span class="text-gold">.</span>
+        </p>
+        <p class="mt-3">Hair that feels like you.</p>
+      </div>
+
+      <div class="flex flex-wrap gap-6 text-sm">
+        <a href="index.html" class="hover:text-gold">Home</a>
+        <a href="services.html" class="hover:text-gold">Services</a>
+        <a href="booking.html" class="hover:text-gold">Booking & Contact</a>
+        <a href="about.html" class="hover:text-gold">About</a>
+      </div>
+    </div>
+
+    <p class="mx-auto mt-8 max-w-7xl border-t border-gray-700 pt-5 text-sm">
+      © 2026 LUXE Hair Studio. Student website prototype.
+    </p>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuButton = document.getElementById("menuButton");
+    const menu = document.getElementById("menu");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = !menu.classList.contains("hidden");
+      menu.classList.toggle("hidden");
+      menu.classList.toggle("flex");
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    // Booking prototype: data stays in this browser.
+    const storageKey = "luxeHairStudioBookings";
+    const form = document.getElementById("bookingForm");
+    const bookingList = document.getElementById("bookingList");
+    const formMessage = document.getElementById("formMessage");
+    const submitButton = document.getElementById("submitButton");
+    const cancelEditButton = document.getElementById("cancelEditButton");
+    const dateInput = document.getElementById("date");
+    let editingId = null;
+
+    // Use the browser's local date so today is selectable.
+    const today = new Date();
+    const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+      .toISOString().split("T")[0];
+    dateInput.min = localToday;
+
+    function getBookings() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey)) || [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveBookings(bookings) {
+      localStorage.setItem(storageKey, JSON.stringify(bookings));
+    }
+
+    function showMessage(message) {
+      formMessage.textContent = message;
+      formMessage.classList.remove("hidden");
+    }
+
+    function resetForm() {
+      form.reset();
+      editingId = null;
+      submitButton.textContent = "Save Appointment";
+      document.getElementById("formHeading").textContent = "Request your booking";
+      cancelEditButton.classList.add("hidden");
+    }
+
+    function addText(parent, tag, content, className = "") {
+      const element = document.createElement(tag);
+      element.textContent = content;
+      element.className = className;
+      parent.appendChild(element);
+      return element;
+    }
+
+    function renderBookings() {
+      bookingList.replaceChildren();
+      const bookings = getBookings();
+
+      if (bookings.length === 0) {
+        addText(
+          bookingList,
+          "p",
+          "No appointments saved yet. Fill in the form above to try it.",
+          "rounded bg-white p-6 text-muted md:col-span-2"
+        );
+        return;
+      }
+
+      bookings.forEach((booking) => {
+        const card = document.createElement("article");
+        card.className = "rounded bg-white p-6 shadow-sm";
+
+        addText(card, "h3", booking.service, "font-display text-2xl");
+        addText(card, "p", `${booking.date} at ${booking.time}`, "mt-2 font-semibold text-gold");
+        addText(card, "p", `Name: ${booking.fullName}`, "mt-4 text-muted");
+        addText(card, "p", `Email: ${booking.email}`, "text-muted");
+        addText(card, "p", `Phone: ${booking.phone}`, "text-muted");
+        addText(card, "p", `Stylist: ${booking.stylist}`, "text-muted");
+
+        if (booking.notes) {
+          addText(card, "p", `Notes: ${booking.notes}`, "mt-2 text-muted");
+        }
+
+        const actions = document.createElement("div");
+        actions.className = "mt-6 flex flex-wrap gap-3";
+
+        const editButton = addText(actions, "button", "Edit",
+          "rounded bg-ink px-5 py-2 font-semibold text-white hover:bg-gold");
+        editButton.type = "button";
+        editButton.addEventListener("click", () => editBooking(booking.id));
+
+        const deleteButton = addText(actions, "button", "Cancel booking",
+          "rounded border border-ink px-5 py-2 font-semibold hover:bg-sand");
+        deleteButton.type = "button";
+        deleteButton.addEventListener("click", () => deleteBooking(booking.id));
+
+        card.appendChild(actions);
+        bookingList.appendChild(card);
+      });
+    }
+
+    function editBooking(id) {
+      const booking = getBookings().find((item) => item.id === id);
+      if (!booking) return;
+
+      editingId = id;
+      form.elements.fullName.value = booking.fullName;
+      form.elements.email.value = booking.email;
+      form.elements.phone.value = booking.phone;
+      form.elements.service.value = booking.service;
+      form.elements.stylist.value = booking.stylist;
+      form.elements.date.value = booking.date;
+      form.elements.time.value = booking.time;
+      form.elements.notes.value = booking.notes;
+
+      submitButton.textContent = "Update Appointment";
+      document.getElementById("formHeading").textContent = "Edit your booking";
+      cancelEditButton.classList.remove("hidden");
+      formMessage.classList.add("hidden");
+      form.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function deleteBooking(id) {
+      if (!confirm("Cancel this appointment?")) return;
+
+      const remaining = getBookings().filter((item) => item.id !== id);
+      saveBookings(remaining);
+
+      if (editingId === id) resetForm();
+      renderBookings();
+      showMessage("The appointment was cancelled.");
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) return;
+
+      const booking = {
+        id: editingId || crypto.randomUUID(),
+        fullName: form.elements.fullName.value.trim(),
+        email: form.elements.email.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        service: form.elements.service.value,
+        stylist: form.elements.stylist.value,
+        date: form.elements.date.value,
+        time: form.elements.time.value,
+        notes: form.elements.notes.value.trim()
+      };
+
+      if (booking.date < localToday) {
+        showMessage("Please choose today or a future date.");
+        return;
+      }
+
+      const bookings = getBookings();
+
+      if (editingId) {
+        const position = bookings.findIndex((item) => item.id === editingId);
+        if (position === -1) return;
+        bookings[position] = booking;
+      } else {
+        bookings.push(booking);
+      }
+
+      const wasEditing = Boolean(editingId);
+      saveBookings(bookings);
+      resetForm();
+      renderBookings();
+      showMessage(wasEditing ? "Appointment updated." : "Appointment saved in this browser.");
+    });
+
+    cancelEditButton.addEventListener("click", () => {
+      resetForm();
+      formMessage.classList.add("hidden");
+    });
+
+    // Automatically select a service when someone clicks Book Now on Services.
+    const requestedService = new URLSearchParams(location.search).get("service");
+    if (requestedService) {
+      const serviceOptions = [...form.elements.service.options].map((option) => option.value);
+      if (serviceOptions.includes(requestedService)) {
+        form.elements.service.value = requestedService;
+      }
+    }
+
+    renderBookings();
+  </script>
+</body>
+</html>
